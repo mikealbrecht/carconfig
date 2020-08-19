@@ -1,0 +1,19 @@
+<div class="grid-container">
+    <clr-spinner *ngIf="!loaded">Loading data</clr-spinner>
+    <div *ngFor="let felge of allFelgen" class="card">
+        <div class="card-header">
+            {{felge.value}}
+        </div>
+        <div class="card-block">
+            <div class="card-title">
+                {{felge.description}}
+            </div>
+            <div class="card-text">
+                {{felge.price | currency: 'EUR'}}
+            </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-sm btn-link" (click)="onFelgenSelect(felge)">Auswählen</button>
+        </div>
+    </div>
+</div>

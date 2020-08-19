@@ -1,0 +1,19 @@
+<div class="grid-container">
+    <clr-spinner *ngIf="!loaded">Loading data</clr-spinner>
+    <div *ngFor="let lack of allLackierung" class="card">
+        <div class="card-header">
+            {{lack.value}}
+        </div>
+        <div class="card-block">
+            <div class="card-title">
+                {{lack.description}}
+            </div>
+            <div class="card-text">
+                {{lack.price | currency : 'EUR'}}
+            </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-sm btn-link" (click)="onLackierungSelect(lack)">Auswählen</button>
+        </div>
+    </div>
+</div>

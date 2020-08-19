@@ -1,0 +1,19 @@
+<div class="grid-container">
+    <clr-spinner *ngIf="!loaded">Loading data</clr-spinner>
+    <div *ngFor="let motor of allMotor" class="card">
+        <div class="card-header">
+            {{motor.value}}
+        </div>
+        <div class="card-block">
+            <div class="card-title">
+                {{motor.description}}
+            </div>
+            <div class="card-text">
+                {{motor.price | currency : 'EUR'}}
+            </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-sm btn-link" (click)="onMotorSelect(motor)">Auswählen</button>
+        </div>
+    </div>
+</div>

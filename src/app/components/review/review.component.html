@@ -1,0 +1,14 @@
+<div class="review">
+    <h3>Ihr Auftrag hat folgende Daten</h3>
+    <p><b>Id:</b> {{auftrag.guid}}</p>
+    <p><b>Datum:</b> {{auftrag.date | date}}</p>
+    <p><b>Preis:</b> {{auftrag.totalPrice | currency : 'EUR'}}</p>
+    <p><b>Motor:</b> {{auftrag.motor?.description}}</p>
+    <p><b>Lackierung:</b> {{auftrag.lackierung?.description}}</p>
+    <p><b>Felgen:</b> {{auftrag.felgen?.description}}</p><br />
+    <div *ngIf="auftrag.ausstattung?.length > 0"><b>Ausstattung:</b>
+        <ul>
+            <li *ngFor="let item of auftrag.ausstattung">{{item.description}}</li>
+        </ul>
+    </div>
+</div>

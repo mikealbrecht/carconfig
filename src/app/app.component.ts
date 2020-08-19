@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuftragService } from './service/auftrag.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'carconfig';
+
+  constructor(public srvAuftrag: AuftragService) {
+
+  }
 }

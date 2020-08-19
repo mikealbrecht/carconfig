@@ -1,0 +1,23 @@
+<clr-timeline>
+    <clr-timeline-step [clrState]="srvAuftrag.StateMotor$ | async">
+        <clr-timeline-step-title>Motor</clr-timeline-step-title>
+        <clr-timeline-step-description>Vruum, Vruum</clr-timeline-step-description>
+    </clr-timeline-step>
+    <clr-timeline-step [clrState]="srvAuftrag.StateLack$ | async">
+        <clr-timeline-step-title>Lackierung</clr-timeline-step-title>
+        <clr-timeline-step-description>Etwas Farbe im Leben</clr-timeline-step-description>
+    </clr-timeline-step>
+    <clr-timeline-step [clrState]="srvAuftrag.StateFelgen$ | async">
+        <clr-timeline-step-title>Felgen
+        </clr-timeline-step-title>
+        <clr-timeline-step-description>Bigger is better</clr-timeline-step-description>
+    </clr-timeline-step>
+    <clr-timeline-step [clrState]="srvAuftrag.StateAusstattung$ | async">
+        <clr-timeline-step-title>Sonderausstattung</clr-timeline-step-title>
+        <clr-timeline-step-description>Darfs etwas mehr sein?</clr-timeline-step-description>
+    </clr-timeline-step>
+    <clr-timeline-step [clrState]="srvAuftrag.StateZusammen$ | async">
+        <clr-timeline-step-title>Zusammenfassung</clr-timeline-step-title>
+        <clr-timeline-step-description>Ein letzter Blick</clr-timeline-step-description>
+    </clr-timeline-step>
+</clr-timeline>

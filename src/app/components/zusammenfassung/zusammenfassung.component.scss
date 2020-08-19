@@ -1,0 +1,14 @@
+.review-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    div {
+        font-size: large;
+    }
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+}

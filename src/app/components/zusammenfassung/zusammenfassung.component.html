@@ -1,0 +1,36 @@
+<div *ngIf="!showLink">
+    <h3>Sie haben gewählt:</h3>
+    <div class="review-container">
+        <div><b>Motor:</b>
+            <ul>
+                <li>{{srvAuftrag.SelectedMotor()?.description}}</li>
+            </ul>
+        </div>
+        <div><b>Lackierung:</b>
+            <ul>
+                <li>{{srvAuftrag.SelectedLackierung()?.description}}</li>
+            </ul>
+        </div>
+        <div><b>Felgen:</b>
+            <ul>
+                <li>{{srvAuftrag.SelectedFelgen()?.description}}</li>
+            </ul>
+        </div>
+        <div><b>Sonderausstattung:</b>
+            <ul class="list">
+                <li *ngFor="let item of ausstattungen">
+                    {{item.description}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="btn-group btn-primary">
+        <button [clrLoading]="submitBtnState" class="btn" (click)="onSend()">Auftrag erstellen und abschicken</button>
+    </div>
+</div>
+
+<div *ngIf="showLink">
+    <h1>Ihr Auftrag wurde erfolgreich angenommen</h1>
+    <h3>Verwenden Sie folgenden Link um sich Ihren Auftrag noch einmal anzusehen:</h3>
+    <span><a href="{{link}}" target="_blank">{{link}}</a></span>
+</div>

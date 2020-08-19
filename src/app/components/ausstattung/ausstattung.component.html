@@ -1,0 +1,23 @@
+<div class="grid-container">
+    <clr-spinner *ngIf="!loaded">Loading data</clr-spinner>
+    <div *ngFor="let a of allAusstattung" class="card" [ngClass]="{disabled: !a.canSelect}">
+        <div class="card-header">
+            {{a.ausstattung.value}}
+        </div>
+        <div class="card-block">
+            <div class="card-title">
+                {{a.ausstattung.description}}
+            </div>
+            <div class="card-text">
+                {{a.ausstattung.price | currency : 'EUR'}}
+            </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-sm btn-link" [disabled]="!a.canSelect || a.isSelected" (click)="onSelected(a)">Auswählen</button>
+            <button class="btn btn-sm btn-link" [disabled]="!a.isSelected" (click)="onDeselect(a)">Abwählen</button>
+        </div>
+    </div>
+    <div class="btn-group btn-primary">
+        <button class="btn" (click)="onWeiter()">Weiter</button>
+    </div>
+</div>
